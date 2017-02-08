@@ -1,10 +1,10 @@
 # jqSlim
 
-jqSlim is a super-tiny jQuery-like API JavaScript library (480 bytes | 145 gzipped)
+jqSlim is a super-tiny jQuery-like API JavaScript library (781 bytes minified | 449 bytes gzipped)
 
 ### Browser support
 
-[jqSlim](https://github.com/pwFoo/jqSlim/blob/master/jqSlim.js) **(recommended)** version is supported by the following browsers: IE9+, Chrome 6+, Safari 5+, Firefox 6+, Opera 11.5+.
+[jqSlim](https://github.com/pwFoo/jqSlim/blob/master/jqSlim.js) version is supported by the following browsers: IE9+, Chrome 6+, Safari 5+, Firefox 6+, Opera 11.5+.
 
 ## What can I do with jqSlim?
 
