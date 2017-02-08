@@ -13,7 +13,7 @@
     function jqSlim(selector) {
         // debugging info
         //console.log("[init] selector: " + selector);
-        array.push.apply(this, selector && selector.nodeType ? [selector] : '' + selector === selector ? query(selector) : element);
+        array.push.apply(this, selector && selector.nodeType ? [selector] : '' + selector === selector ? querySwitch(selector) : element);
     }
 
     /*
@@ -21,7 +21,7 @@
      * http://ryanmorr.com/abstract-away-the-performance-faults-of-queryselectorall/
      * selector = a css selector to get an array of elements
      */
-    function query(selector) {
+    function querySwitch(selector) {
         // debugging info
         //console.log("[query] selector: " + selector);
 
