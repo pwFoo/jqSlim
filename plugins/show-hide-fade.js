@@ -7,7 +7,7 @@
 $.prototype.fadeOut = function(duration) {
     return this.each(function(element) {
         // stop if already hidden
-        if (element.dataset._ki_opacity !== undefined) return;
+        if (element.dataset._ki_opacity !== []._) return;   // skip if undefined
         // init vars
         var style = element.style, step = 25/(duration || 700);
         // set helper attribute with element opacity
@@ -32,7 +32,7 @@ $.prototype.fadeOut = function(duration) {
 $.prototype.fadeIn = function(duration) {
     return this.each(function(element) {
         // stop if already hidden
-        if (element.dataset._ki_opacity === undefined) return;
+        if (element.dataset._ki_opacity === []._) return;   // skip if undefined
         // init vars
         var style = element.style, step = 25/(duration || 700);
         // show element first
