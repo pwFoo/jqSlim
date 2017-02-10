@@ -69,7 +69,7 @@
         // debugging info
         //console.log("[main$] selector: " + selector);
 
-        // ToDo: Verify if "/c/" should be replaced with renamed variable "/array/" !?!?!?
+        // "/c/.test(document.readyState)" -> test DOM readyState contains "c" (http://www.w3schools.com/jsref/prop_doc_readystate.asp)
         return /^f/.test(typeof selector) ? /c/.test(document.readyState) ? selector() : $(document).on('DOMContentLoaded', selector) : new jqSlim(selector);
     }
 
