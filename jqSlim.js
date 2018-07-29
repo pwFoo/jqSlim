@@ -13,7 +13,14 @@
     function jqSlim(selector) {
         // debugging info
         //console.log("[init] selector: " + selector);
-        array.push.apply(this, selector && selector.nodeType ? [selector] : '' + selector === selector ? querySwitch(selector) : element);
+        array.push.apply(
+            this,
+            selector && selector.nodeType ?
+                [selector] : '' +
+                    selector === selector ?
+                        querySwitch(selector) :
+                        element
+        );
     }
 
     /*
@@ -66,11 +73,12 @@
      * returns instance or executes function on ready
      */
     $ = function (selector) {
-        // debugging info
-        //console.log("[main$] selector: " + selector);
-
         // "/c/.test(document.readyState)" -> test DOM readyState contains "c" (http://www.w3schools.com/jsref/prop_doc_readystate.asp)
-        return /^f/.test(typeof selector) ? /c/.test(document.readyState) ? selector() : $(document).on('DOMContentLoaded', selector) : new jqSlim(selector);
+        return /^f/.test(typeof selector) ?                     // outer if condition
+            /c/.test(document.readyState) ?                     // outer if part with another inner if condition
+                selector() :                                    // inner if part
+                $(document).on('DOMContentLoaded', selector) :  // inner else part
+            new jqSlim(selector);                               // outer else part
     }
 
     // set jqSlim prototype
